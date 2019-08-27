@@ -59,6 +59,7 @@ public class MachineController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(machineDto);
 	}
 	
+	
 	@PutMapping("/machines/{idM}")
 	public Object updateMachine(@Valid @RequestBody MachineDto machineDto, @PathVariable long idM) {
 		Machine machine = modelMapper.map(machineDto, Machine.class);

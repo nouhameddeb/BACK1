@@ -10,13 +10,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table( name = "MAINTENANCE_PREVENTIVE")
+//@Table( name = "MAINTENANCE_PREVENTIVE")
 @DiscriminatorValue("PREVENTIVE")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,7 +37,7 @@ public class MaintenancePreventive extends Maintenance{
 	public MaintenancePreventive(Long idM, Date datedebut, Date datefin, Consultant consultant, Set<Piece> pieces,
 			OrdreTravail ordreTravail, FactureInterne factureInterne, Rapport rapport, Integer dureeP, String descriptionP,
 			DemandeIntervention demandeIntervention) {
-		super(idM, datedebut, datefin, consultant, pieces, ordreTravail, factureInterne, rapport);
+		//super(idM, datedebut, datefin, consultant, pieces, ordreTravail, factureInterne, rapport);
 		this.dureeP = dureeP;
 		this.descriptionP = descriptionP;
 		this.demandeIntervention = demandeIntervention;
@@ -46,6 +45,6 @@ public class MaintenancePreventive extends Maintenance{
 
 	public MaintenancePreventive(Long idM, Date datedebut, Date datefin, Consultant consultant, Set<Piece> pieces,
 			OrdreTravail ordreTravail, FactureInterne factureInterne, Rapport rapport) {
-		super(idM, datedebut, datefin, consultant, pieces, ordreTravail, factureInterne, rapport);
+		//super(idM, datedebut, datefin, consultant, pieces, ordreTravail, factureInterne, rapport);
 	}
 }

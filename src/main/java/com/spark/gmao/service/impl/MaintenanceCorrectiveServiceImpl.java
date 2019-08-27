@@ -20,8 +20,8 @@ public class MaintenanceCorrectiveServiceImpl implements MaintenanceCorrectiveSe
 	MaintenanceCorrectiveRepository maintenanceCorrectiveRepository;
 	
 	@Override
-	public MaintenanceCorrective getMaintenanceCorrective(Long idCr) {
-		MaintenanceCorrective maintenanceCorrective = maintenanceCorrectiveRepository.findOne(idCr);
+	public MaintenanceCorrective getMaintenanceCorrective(Long idCorrective) {
+		MaintenanceCorrective maintenanceCorrective = maintenanceCorrectiveRepository.findOne(idCorrective);
 		if(maintenanceCorrective == null) {
 			throw new MaintenanceCorrectiveNotFoundException();
 		}
@@ -41,9 +41,9 @@ public class MaintenanceCorrectiveServiceImpl implements MaintenanceCorrectiveSe
 	}
 
 	@Override
-	public void deleteMaintenanceCorrective(Long idCr) {
+	public void deleteMaintenanceCorrective(Long idCorrective) {
 		try {
-			maintenanceCorrectiveRepository.delete(idCr);
+			maintenanceCorrectiveRepository.delete(idCorrective);
 		} catch (EmptyResultDataAccessException e) {
 			throw new MaintenanceCorrectiveNotFoundException();
 		}

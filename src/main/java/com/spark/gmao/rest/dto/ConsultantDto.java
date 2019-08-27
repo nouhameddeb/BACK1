@@ -16,11 +16,11 @@ import lombok.Setter;
 public class ConsultantDto {
 	
 	private Long idConsultant;
-	private String cin;
+	private Integer cin;
 	private String nom;
-	private String prenom;
-	private String telephone;
+	private Integer telephone;
 	private String adresse;
 	private String email;
+	
 
 }

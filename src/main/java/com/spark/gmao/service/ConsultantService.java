@@ -14,5 +14,4 @@ public interface ConsultantService {
 
 	void deleteConsultant(Long idConsultant);
 
-
 }

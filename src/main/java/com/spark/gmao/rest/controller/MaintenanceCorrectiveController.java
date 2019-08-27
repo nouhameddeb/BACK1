@@ -10,6 +10,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.spark.gmao.model.entity.MaintenanceCorrective;
 import com.spark.gmao.rest.dto.MaintenanceCorrectiveDto;
 import com.spark.gmao.service.MaintenanceCorrectiveService;
 
+@CrossOrigin("*")
 @RestController
 public class MaintenanceCorrectiveController {
 	
@@ -39,9 +41,9 @@ public class MaintenanceCorrectiveController {
 		return ResponseEntity.status(HttpStatus.OK).body(maintenanceCorrectiveDtos);
 	}
 	
-	@GetMapping("/correctives/{idCr}")
-	public Object retrieveMaintenanceCorrective(@PathVariable Long idCr) {
-		MaintenanceCorrective maintenanceCorrective = maintenanceCorrectiveService.getMaintenanceCorrective(idCr);
+	@GetMapping("/correctives/{idCorrective}")
+	public Object retrieveMaintenanceCorrective(@PathVariable Long idCorrective) {
+		MaintenanceCorrective maintenanceCorrective = maintenanceCorrectiveService.getMaintenanceCorrective(idCorrective);
 		MaintenanceCorrectiveDto maintenanceCorrectiveDto = modelMapper.map( maintenanceCorrective,  MaintenanceCorrectiveDto.class);
 		return ResponseEntity.status(HttpStatus.OK).body(maintenanceCorrectiveDto);
 	}
@@ -56,7 +58,7 @@ public class MaintenanceCorrectiveController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(maintenanceCorrective);
 	}
 	
-	@PutMapping("/correctives/{idCr}")
+	@PutMapping("/correctives/{idCorrective}")
 	public Object updateMaintenanceCorrective(@Valid @RequestBody MaintenanceCorrectiveDto maintenanceCorrectiveDto, @PathVariable long idM) {
 		MaintenanceCorrective maintenanceCorrective = modelMapper.map(maintenanceCorrectiveDto, MaintenanceCorrective.class);
 		maintenanceCorrective.setIdM(idM);
@@ -66,9 +68,9 @@ public class MaintenanceCorrectiveController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(maintenanceCorrective);
 	}
 	
-	@DeleteMapping("/correctives/{idCr}")
-	public Object Delete(@PathVariable("idCr") long idCr) {
-		maintenanceCorrectiveService.deleteMaintenanceCorrective(idCr);
+	@DeleteMapping("/correctives/{idCorrective}")
+	public Object Delete(@PathVariable("idCorrective") long idCorrective) {
+		maintenanceCorrectiveService.deleteMaintenanceCorrective(idCorrective);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 	}
 

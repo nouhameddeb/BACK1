@@ -40,6 +40,15 @@ public class Maintenance implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idM;
 	
+	@Column(name = "TYPE_PANNE", length = 50)
+	private String typePanne;
+	
+	@Column(name = "CAUSE", length = 50)
+	private String causePanne;
+	
+	@Column(name = "description", length = 50)
+	private String description;
+	
 	@Column(name = "DATE_DEBUT", length = 50)
 	private Date datedebut;
 	
@@ -49,6 +58,10 @@ public class Maintenance implements Serializable{
 	@ManyToOne(fetch = FetchType.LAZY)
 	   @JoinColumn(name ="idConsultant")
 	   private Consultant consultant;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	   @JoinColumn(name ="idTraitant")
+	   private SousTraitant sousTraitant;
 	
 	@OneToMany(mappedBy = "maintenance", fetch = FetchType.LAZY)
 	   private Set<Piece> pieces;

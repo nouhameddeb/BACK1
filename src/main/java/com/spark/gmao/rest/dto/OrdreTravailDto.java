@@ -25,6 +25,12 @@ public class OrdreTravailDto {
 	private String typeMaintenance;
 	private Integer niveauMaintenance;
 	private String criticite;
+	private String realiser;
+	private String demandeur;
+	private Date dispo;
+	private String localisation;
+	private String etat;
+	private String desc;
 	private MachineDto machine;
 	private DemandeInterventionDto demande;
 	private PieceDto piece;

@@ -19,17 +19,20 @@ public class MachineDto {
 	
 	private Long idM;
 	private String designation;
-	private String code;
-	private String libelle;
+	//private String code;
+	//private String libelle;
 	private String reference;
-	private String type;
+	//private String type;
 	private String modele;
 	private String marque;
 	private String fournisseur;
 	private String fabricant;
 	private Date dateAcquisition;
 	private Date finGarantie;
+	private Date miseEnPanne;
+	private String com;
+	private String localisation;
 	private String criticite;
-	private String etat;
+	//private String etat;
 
 }

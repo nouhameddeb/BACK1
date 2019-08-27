@@ -34,19 +34,19 @@ public class Machine implements Serializable{
 	@Column(name = "DESIGNATION", length = 50, nullable = false)
 	private String designation;
 	
-	@Column(name = "CODE", length = 50, nullable = false)
+	/*@Column(name = "CODE", length = 50, nullable = false)
 	private String code;
 	
 	@Column(name = "LIBELLE", length = 50, nullable = false)
-	private String libelle;
+	private String libelle;*/
 	
 	@Column(name = "REFERENCE", length = 50, nullable = false)
 	private String reference;
 	
-	@Column(name = "TYPE", length = 50, nullable = false)
-	private String type;
+	/*@Column(name = "TYPE", length = 50, nullable = false)
+	private String type;*/
 	
-	@Column(name = "MODELE", length = 50, nullable = false)
+	@Column(name = "MODELE", length = 50)
 	private String modele;
 	
 	@Column(name = "MARQUE", length = 50, nullable = false)
@@ -61,14 +61,20 @@ public class Machine implements Serializable{
 	@Column(name = "DATE_ACQUISITION", length = 50, nullable = false)
 	private Date dateAcquisition;
 	
+	@Column(name = "MISE_EN_PANNE", length = 50)
+	private Date miseEnPanne;
+	
 	@Column(name = "FIN_GARANTIE", length = 50, nullable = false)
 	private Date finGarantie;
 	
 	@Column(name = "CRITICITE", length = 50, nullable = false)
 	private String criticite;
 	
-	@Column(name = "ETAT", length = 50, nullable = false)
-	private String etat;
+	@Column(name = "LOCALISATION", length = 50, nullable = false)
+	private String localisation;
+	
+	@Column(name = "COMMENTAIRES", length = 50)
+	private String com;
 	
 	@OneToMany(mappedBy = "machine", fetch = FetchType.LAZY)
 	   private Set<DemandeIntervention> demandeIntervention;

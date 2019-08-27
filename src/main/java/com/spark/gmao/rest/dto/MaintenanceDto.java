@@ -16,6 +16,9 @@ import lombok.NoArgsConstructor;
 public class MaintenanceDto {
 	
 	private long idM;
+	private String description;
+	private String typePanne;
+	private String causePanne;
 	private Date datedebut;
 	private Date datefin;
 

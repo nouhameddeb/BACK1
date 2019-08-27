@@ -6,12 +6,12 @@ import com.spark.gmao.model.entity.MaintenanceCorrective;
 
 public interface MaintenanceCorrectiveService {
 
-	MaintenanceCorrective getMaintenanceCorrective(Long idCr);
+	MaintenanceCorrective getMaintenanceCorrective(Long idCorrective);
 
 	List<MaintenanceCorrective> getAllMaintenanceCorrective();
 
 	MaintenanceCorrective saveMaintenanceCorrective(MaintenanceCorrective maintenanceCorrective);
 
-	void deleteMaintenanceCorrective(Long idCr);
+	void deleteMaintenanceCorrective(Long idCorrective);
 
 }

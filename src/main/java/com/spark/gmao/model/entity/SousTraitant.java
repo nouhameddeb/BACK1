@@ -17,45 +17,44 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "CONSULTANT")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Consultant implements Serializable{
-
+@Table(name = "SOUS_TRAITANT")
+public class SousTraitant implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "ID", nullable = false)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idConsultant;
+	private Long idTraitant;
+	
+	@Column(name = "NAME", length = 50, nullable = false)
+	private String nom;
+	
+	@Column(name = "TELEPHONE", length = 50, nullable = false)
+	private Integer telephone;
+	
+	@Column(name = "EMAIL", length = 50, nullable = false)
+	private String email;
+	
+	
+	@Column(name = "SOCIETE", length = 50, nullable = false)
+	private String societe;
+	
+	@Column(name = "adresse", length = 50, nullable = false)
+	private String adresse;
 	
 	@Column(name = "CIN", length = 50, nullable = false)
 	private Integer cin;
 	
-	@Column(name = "NAME", length = 50, nullable = false)
-	 private String nom;
-	 
-	 @Column(name = "PHONE", length = 50, nullable = false)
-	 private Integer telephone;
-	 
-	 @Column(name = "ADRESS", length = 50, nullable = false)
-	 private String adresse;
-	 
-	 @Column(name = "E_MAIL", length = 50, nullable = false)
-	 private String email;
-	 
-	
-	/* @Column(name = "TYPE", length = 50, nullable = false)
-	 private String type;*/
-	 
-	 @OneToMany(mappedBy = "consultant", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sousTraitant", fetch = FetchType.LAZY)
 	   private Set<OrdreTravail> ordreTravails;
 	 
-	 @OneToMany(mappedBy = "consultant", fetch = FetchType.LAZY)
+	 @OneToMany(mappedBy = "sousTraitant", fetch = FetchType.LAZY)
 	   private Set<Maintenance> maintenances;
+
+	
+
 }

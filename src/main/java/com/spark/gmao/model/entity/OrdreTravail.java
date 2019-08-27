@@ -54,6 +54,24 @@ public class OrdreTravail implements Serializable{
 	@Column(name = "CRITICITE", length = 50)
 	private String criticite;
 	
+	@Column(name = "A_REALISER_PAR", length = 50)
+	private String realiser;
+	
+	@Column(name = "AGENT_DEMANDEUR", length = 50)
+	private String demandeur;
+	
+	@Column(name = "DISPONIBILITE", length = 50)
+	private Date dispo;
+	
+	@Column(name = "LOCALISATION", length = 50)
+	private String localisation;
+	
+	@Column(name = "ETAT", length = 50)
+	private String etat;
+	
+	@Column(name = "DESCRIPTION", length = 50)
+	private String desc;
+	
 	 @OneToMany(mappedBy = "ordreTravail", fetch = FetchType.LAZY)
 	   private Set<Maintenance> maintenances;
 	 
@@ -64,6 +82,10 @@ public class OrdreTravail implements Serializable{
 	 @ManyToOne(fetch = FetchType.LAZY)
 	   @JoinColumn(name ="idConsultant")
 	   private Consultant consultant;
+	 
+	 @ManyToOne(fetch = FetchType.LAZY)
+	   @JoinColumn(name ="idTraitant")
+	   private SousTraitant sousTraitant;
 
 	public void setIdOrdre(long idOrdre) {
 		// TODO Auto-generated method stub

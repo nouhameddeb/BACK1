@@ -11,16 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(Include.NON_NULL)
-public class MaintenanceCorrectiveDto {
+public class SousTraitantDto {
 	
-	private Long idCorrective;
-	private String typePanne;
-	private String causePanne;
-	private String etat;
-	private String symptome;
-	private String description;
-	private MachineDto machineDto;
-	private DemandeInterventionDto demandeInterventionDto;
+	private Long idTraitant;
+	private Integer cin;
+	private String nom;
+	private Integer telephone;
+	private String email;
+	private String societe;
+	private String adresse;
 
 }
-
